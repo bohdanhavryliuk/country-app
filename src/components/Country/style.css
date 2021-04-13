@@ -1,0 +1,11 @@
+.country {
+    background: darkkhaki;
+    margin: 3rem 0 0 0;
+    border-radius: 20px;
+    padding: 10px;
+    font-style: oblique;
+    font-weight: bold;
+    font-variant: normal;
+    border: 4px double black;
+
+}
