@@ -10,19 +10,18 @@ class App extends Component {
 
         this.state = {
             countryList : countries
-
         }
         this.onChange = this.onChange.bind(this);
     }
 
-    onChange = (valueName) => {
+    onChange = (valueName, valueLeader, valueLeaderPost, valueCapital) => {
 
         this.setState((state) => ({
             countryList: [{
                 countryName: valueName,
-                leaderName: "defaultName",
-                leaderPost: "defaultName",
-                capital: "defaultName"
+                leaderName: valueLeader,
+                leaderPost: valueLeaderPost,
+                capital: valueCapital
 
             }, ...state.countryList]
         }))

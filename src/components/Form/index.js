@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import './style.css'
 
 class Form extends Component {
     constructor(props) {
@@ -11,15 +11,11 @@ class Form extends Component {
             valueLeaderPost: '',
             valueCapital: ''
         }
-
-
     }
     onSubmit = (e) => {
         e.preventDefault();
 
-        this.props.onChange(this.state.value);
-        //this.props.onChange(this.state.valueLeader);
-
+        this.props.onChange(this.state.value, this.state.valueLeader, this.state.valueLeaderPost, this.state.valueCapital);
 
     }
 
@@ -34,30 +30,33 @@ class Form extends Component {
         })*/
     }
 
-    onChange2 = (e) => {
-
-        this.setState({
-            valueLeader: e.target.value
-
-        })
-    }
-
-
 
     render() {
         return(
-            <form onSubmit={this.onSubmit}>
-
+            <form className='form' onSubmit={this.onSubmit}>
 
                 <input name="value"
-                type="string"
-                value= {this.state.value}
-                onChange={this.onChange}/>
+                       type="string"
+                       value= {this.state.value}
+                       onChange={this.onChange}/>
+
                 <input name="valueLeader"
                        type="string"
                        value= {this.state.valueLeader}
                        onChange={this.onChange}/>
+
+                <input name="valueLeaderPost"
+                       type="string"
+                       value= {this.state.valueLeaderPost}
+                       onChange={this.onChange}/>
+
+                <input name="valueCapital"
+                       type="string"
+                       value= {this.state.valueCapital}
+                       onChange={this.onChange}/>
+
                 <button>Click</button>
+
             </form>
         )
     }
